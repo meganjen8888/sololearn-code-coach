@@ -56,3 +56,19 @@ Here is the menu:
   cout << fixed << std::setprecision(2)<< tax(cost, 7) << endl;
   ```
   
+## Military Time
+
+Analysis coming soon...
+code below
+```python
+time=input()
+hourandminute=time.split(':')
+hour=int(hourandminute[0])
+if 'PM' in time and hour >= 1:
+	hour=hour+12
+if hour < 10:
+	finalhour = '0'+ str(hour)
+else:
+	finalhour=str(hour)
+print (finalhour+':'+hourandminute[1][0:2])
+```
