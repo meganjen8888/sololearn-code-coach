@@ -72,3 +72,62 @@ else:
 	finalhour=str(hour)
 print (finalhour+':'+hourandminute[1][0:2])
 ```
+
+## New Drivers' License
+
+```c++
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include <string>
+using namespace std;
+
+int main() {
+	string selectedName;
+	int numberOfAgents;
+	string queue[5];
+	string temp;
+	int posofselectedName;
+	double x;
+	int n;
+	int final = 0;
+	cin >> selectedName;
+	queue[0] = selectedName;
+	cin >> numberOfAgents;
+	for (int i =1; i <= 4; i++) {
+		cin >> queue[i];
+	}
+	for (int i = 0; i <5; ++i) {
+		for (int j=i+1; j<5; ++j) {
+			if (queue[i]>queue[j]) {
+				temp =queue[i];
+				queue[i]=queue[j];
+				queue[j]=temp;
+			}
+		}
+	}
+	/*cout << "the name is "<< selectedName << endl;
+cout << "there are "<< numberOfAgents << "agents" << endl;
+
+for (int i = 0; i<5; i++) {
+	cout << "the other people are " << queue[i] << endl;
+}*/
+n=sizeof(queue)/sizeof(queue[0]);
+//cout << n;
+posofselectedName=0;
+while (posofselectedName < n) {
+	if (queue[posofselectedName]==selectedName) {
+	break;
+}
+posofselectedName++;
+}
+//cout << posofselectedName << endl;
+posofselectedName=posofselectedName+1;
+//cout << posofselectedName << endl;
+//cout << numberOfAgents << endl;
+x = (double)posofselectedName/(double)numberOfAgents;
+cout << ceil(x)*20 << endl;
+//cout << final
+return 0;
+}
+```
