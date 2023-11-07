@@ -131,3 +131,39 @@ cout << ceil(x)*20 << endl;
 return 0;
 }
 ```
+
+## Deja Vu
+
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+int flag=0;
+	string word;
+	vector <char> wordletters;
+	cin >> word;
+	for (int i = 0; i < word.length(); i++) {
+	//cout << word.at(i) << endl;
+	wordletters.push_back(word.at(i));
+}
+sort(wordletters.begin(), wordletters.end());
+//cout <<wordletters.at(0);
+for (int i = 0; i < word.length()-1; i++) {
+	if (wordletters.at(i) == wordletters.at(i+1)) {
+	flag=1;
+}
+}
+if (flag==1) {
+	cout << "Deja Vu";
+}
+else {
+	
+cout << "Unique";
+}
+		return 0;
+}
+```
